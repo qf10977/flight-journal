@@ -1,0 +1,180 @@
+[
+  {
+    "name": "北京",
+    "code": "110100",
+    "province": "北京市",
+    "pinyin": "beijing",
+    "lat": 39.9042,
+    "lng": 116.4074,
+    "airports": [
+      {
+        "name": "首都国际机场",
+        "code": "PEK",
+        "terminal": 3,
+        "address": "北京市顺义区机场西路"
+      },
+      {
+        "name": "大兴国际机场",
+        "code": "PKX",
+        "terminal": 1,
+        "address": "北京市大兴区榆垡镇"
+      }
+    ]
+  },
+  {
+    "name": "上海",
+    "code": "310100",
+    "province": "上海市",
+    "pinyin": "shanghai",
+    "lat": 31.2304,
+    "lng": 121.4737,
+    "airports": [
+      {
+        "name": "浦东国际机场",
+        "code": "PVG",
+        "terminal": 2,
+        "address": "上海市浦东新区迎宾大道6000号"
+      },
+      {
+        "name": "虹桥国际机场",
+        "code": "SHA",
+        "terminal": 2,
+        "address": "上海市长宁区虹桥路2550号"
+      }
+    ]
+  },
+  {
+    "name": "广州",
+    "code": "440100",
+    "province": "广东省",
+    "pinyin": "guangzhou",
+    "lat": 23.1291,
+    "lng": 113.2644,
+    "airports": [
+      {
+        "name": "白云国际机场",
+        "code": "CAN",
+        "terminal": 2,
+        "address": "广州市白云区机场路"
+      }
+    ]
+  },
+  {
+    "name": "深圳",
+    "code": "440300",
+    "province": "广东省",
+    "pinyin": "shenzhen",
+    "lat": 22.5431,
+    "lng": 114.0579,
+    "airports": [
+      {
+        "name": "宝安国际机场",
+        "code": "SZX",
+        "terminal": 3,
+        "address": "深圳市宝安区宝安大道1123号"
+      }
+    ]
+  },
+  {
+    "name": "成都",
+    "code": "510100",
+    "province": "四川省",
+    "pinyin": "chengdu",
+    "lat": 30.5728,
+    "lng": 104.0668,
+    "airports": [
+      {
+        "name": "双流国际机场",
+        "code": "CTU",
+        "terminal": 2,
+        "address": "成都市双流区双流国际机场"
+      },
+      {
+        "name": "天府国际机场",
+        "code": "TFU",
+        "terminal": 1,
+        "address": "成都市简阳市芦葭镇"
+      }
+    ]
+  },
+  {
+    "name": "重庆",
+    "code": "500100",
+    "province": "重庆市",
+    "pinyin": "chongqing",
+    "lat": 29.5647,
+    "lng": 106.5501,
+    "airports": [
+      {
+        "name": "江北国际机场",
+        "code": "CKG",
+        "terminal": 3,
+        "address": "重庆市渝北区双凤桥街道"
+      }
+    ]
+  },
+  {
+    "name": "杭州",
+    "code": "330100",
+    "province": "浙江省",
+    "pinyin": "hangzhou",
+    "lat": 30.2741,
+    "lng": 120.1551,
+    "airports": [
+      {
+        "name": "萧山国际机场",
+        "code": "HGH",
+        "terminal": 3,
+        "address": "杭州市萧山区机场路"
+      }
+    ]
+  },
+  {
+    "name": "南京",
+    "code": "320100",
+    "province": "江苏省",
+    "pinyin": "nanjing",
+    "lat": 32.0603,
+    "lng": 118.7969,
+    "airports": [
+      {
+        "name": "禄口国际机场",
+        "code": "NKG",
+        "terminal": 2,
+        "address": "南京市江宁区禄口街道"
+      }
+    ]
+  },
+  {
+    "name": "武汉",
+    "code": "420100",
+    "province": "湖北省",
+    "pinyin": "wuhan",
+    "lat": 30.5928,
+    "lng": 114.3055,
+    "airports": [
+      {
+        "name": "天河国际机场",
+        "code": "WUH",
+        "terminal": 3,
+        "address": "武汉市黄陂区天河街道"
+      }
+    ]
+  },
+  {
+    "name": "西安",
+    "code": "610100",
+    "province": "陕西省",
+    "pinyin": "xian",
+    "lat": 34.3416,
+    "lng": 108.9398,
+    "airports": [
+      {
+        "name": "咸阳国际机场",
+        "code": "XIY",
+        "terminal": 3,
+        "address": "西安市咸阳市渭城区"
+      }
+    ]
+  }
+] 

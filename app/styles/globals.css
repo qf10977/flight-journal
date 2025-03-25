@@ -1,0 +1,24 @@
+/* 添加Leaflet全局样式 */
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  z-index: 0 !important;
+}
+
+.map-container {
+  height: 100% !important;
+  width: 100% !important;
+  position: relative;
+}
+
+/* 确保弹出窗口在地图上正确显示 */
+.leaflet-popup-content-wrapper {
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 8px;
+}
+
+/* 其它全局样式保持不变 */ 

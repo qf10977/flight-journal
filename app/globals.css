@@ -1,0 +1,573 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary-color: 59, 130, 246;  /* blue-500 */
+  --primary-color-hover: 37, 99, 235; /* blue-600 */
+  --primary-light: 239, 246, 255; /* blue-50 */
+  --sidebar-width: 16rem;
+  --sidebar-width-collapsed: 4rem;
+  --header-height: 4rem;
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Leaflet 地图样式 */
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0.5rem;
+  overflow: hidden !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: #f1f1f1 !important;
+  position: relative;
+  z-index: 0 !important;
+}
+
+/* 禁用Leaflet默认边框 */
+.leaflet-control-zoom {
+  border: none !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: white !important;
+  color: #333 !important;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.4s ease-out;
+}
+
+/* 表单元素样式 */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--primary-color), 0.2);
+}
+
+/* 按钮悬停效果 */
+.btn-hover-effect {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 卡片悬停效果 */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* 玻璃态效果 */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* 渐变按钮 */
+.gradient-button {
+  background: linear-gradient(45deg, rgb(var(--primary-color)), rgb(var(--primary-color-hover)));
+  transition: all 0.3s ease;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(45deg, rgb(var(--primary-color-hover)), rgb(var(--primary-color)));
+  box-shadow: 0 4px 12px rgba(var(--primary-color), 0.4);
+}
+
+/* 现代渐变按钮效果 */
+.modern-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modern-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.4) 38%, rgba(255,255,255,0) 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.7s ease-in-out;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.modern-button:hover::before {
+  background-position: -100% 0;
+}
+
+.modern-button:active {
+  transform: scale(0.97);
+}
+
+/* 按钮动画效果 */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.btn-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+}
+
+.btn-glow {
+  animation: glow 3s infinite;
+}
+
+/* 响应式字体大小 */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+  
+  :root {
+    --sidebar-width: 0;
+    --sidebar-width-collapsed: 0;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 16px;
+  }
+} 
+
+/* 应用布局相关 */
+.app-layout {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: transparent;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.content-area {
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+  min-height: calc(100vh - var(--header-height));
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+}
+
+.page-container {
+  padding: 1.5rem;
+  overflow-y: auto;
+  height: calc(100vh - var(--header-height));
+}
+
+/* 组件样式 */
+.journal-card {
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .journal-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .image-placeholder {
+    aspect-ratio: 4/3;
+    background-color: #f3f4f6;
+    overflow: hidden;
+  }
+  
+  .gradient-bottom {
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+  }
+  
+  .publish-button {
+    background-color: rgb(242, 129, 129);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  
+  .publish-button:hover {
+    background-color: rgb(242, 110, 110);
+  }
+  
+  .user-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.2s;
+    overflow: hidden;
+  }
+  
+  .user-button:hover {
+    background-color: rgb(235, 235, 235);
+  }
+  
+  .avatar-circle {
+    background-color: rgb(252, 228, 228);
+    color: rgb(242, 129, 129);
+  }
+
+  .mapContainer {
+    min-height: calc(100vh - 4rem);
+    padding: 1.5rem;
+    background: #f3f4f6;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .mapWrapper {
+    height: 100%;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .flightForm {
+    width: 100%;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flightList {
+    margin-top: 1.5rem;
+    min-height: 300px;
+    max-height: calc(100vh - 600px);
+    overflow-y: auto;
+  }
+  
+  .flightCard {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .flightCard:hover {
+    background-color: #f3f4f6;
+    transform: translateY(-1px);
+  }
+
+/* 地图相关样式 */
+.flight-map-container {
+  height: 500px !important;
+  width: 100% !important;
+  position: relative;
+  z-index: 0;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+/* 确保地图渲染正确 */
+.leaflet-control-container {
+  position: absolute;
+  z-index: 1000;
+}
+
+/* 地图类型切换按钮 */
+.map-type-button {
+  display: block;
+  padding: 6px 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.map-type-button:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: none;
+}
+
+.map-type-button:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.map-type-button:hover {
+  background-color: #f4f4f4;
+}
+
+.map-type-button.active {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.leaflet-pane {
+  z-index: 400;
+}
+
+.leaflet-tile-pane {
+  z-index: 200;
+}
+
+.leaflet-overlay-pane {
+  z-index: 400;
+}
+
+.leaflet-marker-pane {
+  z-index: 600;
+}
+
+.leaflet-tooltip-pane {
+  z-index: 650;
+}
+
+.leaflet-popup-pane {
+  z-index: 700;
+}
+
+/* 航班轨迹标记样式 */
+.flight-marker-container {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* 出发点标记样式 */
+.departure-marker {
+  width: 10px;
+  height: 10px;
+  background-color: #1e88e5;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.departure-marker.selected {
+  background-color: #3b82f6;
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6), 0 0 16px rgba(59, 130, 246, 0.4);
+  animation: pulse 2s infinite;
+}
+
+/* 到达点标记样式 */
+.arrival-marker {
+  width: 14px;
+  height: 14px;
+  background-color: #D92228;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.arrival-marker.selected {
+  background-color: #3b82f6;
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6), 0 0 16px rgba(59, 130, 246, 0.4);
+  animation: pulse 2s infinite;
+}
+
+/* 箭头标记样式 */
+.arrow-marker {
+  position: absolute;
+  width: 0; 
+  height: 0;
+  top: -8px;
+  left: 50%;
+  transform-origin: bottom center;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid white;
+  margin-left: -5px;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.3));
+  transition: all 0.2s ease;
+}
+
+/* 航线动画效果 */
+@keyframes dash {
+  to {
+    stroke-dashoffset: 20;
+  }
+}
+
+/* 飞行路径基本样式 */
+.flight-path {
+  stroke-dasharray: 5;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s linear infinite;
+  animation-direction: reverse;
+  transition: all 0.3s ease;
+}
+
+/* 飞行轨迹辅助样式 */
+.flight-path:hover {
+  stroke-width: 4;
+  stroke-opacity: 1;
+}
+
+/* 创建航线渐变效果 - 不直接使用 */
+.flight-path-gradient {
+  stroke: url(#flight-gradient);
+}
+
+/* SVG 过滤器，用于创建发光效果 */
+.leaflet-container svg {
+  overflow: visible;
+}
+
+/* 脉动动画 */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
