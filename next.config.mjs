@@ -7,7 +7,7 @@ try {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: '.next-build',
+  // distDir: '.next-build' // Commented out for Vercel compatibility
   eslint: {
     ignoreDuringBuilds: true,
   },
